@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +25,34 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+  Route::get('/', function () {
+      return "This is the home page";
+  });
+
+  Route::get('/books', 'BookController@getIndex');
+  Route::get('/book/create', 'BookController@getCreate');
+  Route::post('book/create', 'BookController@postCreate');
+  Route::get('/book/{id}', 'BookController@getShow');
+
+
+
+  /* Does the same as the Routes below */
+  Route::resource('tag', 'TagController');
+  /*
+  Route::get('/tag', 'TagController@index');
+  Route::get('/tag/create', 'TagController@create');
+  Route::post('/tag', 'TagController@store');
+  Route::get('/tag/{tag_id}', 'TagController@show');
+  Route::get('/tag/{tag_id}/edit', 'TagController@edit');
+  Route::put('/tag/{tag_id}', 'TagController@update');
+  Route::delete('/tag/{tag_id}', 'TagController@destroy');
+  */
+
+  Route::get('/practice', function () {
+    #return "Practice";
+    echo config('app.debug');
+    echo 'app.url: '. config('app.url');
+    echo '<br>app.env: '. config('app.env');
+  });
 });
