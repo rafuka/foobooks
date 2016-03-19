@@ -50,9 +50,12 @@ Route::group(['middleware' => ['web']], function () {
   */
 
   Route::get('/practice', function () {
-    #return "Practice";
-    echo config('app.debug');
-    echo 'app.url: '. config('app.url');
-    echo '<br>app.env: '. config('app.env');
+
+
+
+    $random = new Random();
+    return $random->getRandomString(8);
+
+    return 'practice route';
   });
 });
