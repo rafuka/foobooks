@@ -59,5 +59,4 @@ Route::group(['middleware' => ['web']], function () {
     return 'practice route';
   });
 
-  Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
