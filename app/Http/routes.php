@@ -37,7 +37,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-  /* Does the same as the Routes below */
+  /* Does the same as the commented Routes below */
   Route::resource('tag', 'TagController');
   /*
   Route::get('/tag', 'TagController@index');
