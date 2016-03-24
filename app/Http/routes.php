@@ -33,7 +33,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/books', 'BookController@getIndex');
   Route::get('/book/create', 'BookController@getCreate');
   Route::post('book/create', 'BookController@postCreate');
-  Route::get('/book/{id}', 'BookController@getShow');
+  Route::get('/book/{title?}', 'BookController@getShow');
 
 
 
@@ -58,4 +58,6 @@ Route::group(['middleware' => ['web']], function () {
 
     return 'practice route';
   });
+
+  Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });

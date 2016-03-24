@@ -158,6 +158,8 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
     ],
 
     /*
@@ -205,7 +207,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Random' => 'Rych\Random\Random'
+        'Random' => 'Rych\Random\Random',
+
 
     ],
 
